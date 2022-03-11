@@ -296,7 +296,7 @@ Norwegian regulations for medication management (Forskrift om legemiddelhåndter
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e09cb0b8f3782133ae367867a2187198">
+		["MD5-CAM-1.0.1"] = <"c62a6bd79f0e7f7aa5fb3e91844b3229">
 		["build_uid"] = <"a8e03c7c-2d70-45e2-a720-6a6254b9fcb2">
 		["revision"] = <"1.1.2">
 	>
@@ -770,11 +770,6 @@ definition
 							DV_DATE_TIME matches {*}
 						}
 					}
-					ELEMENT[at0157] occurrences matches {0..1} matches {    -- Data administració/no vacunació
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
 					ELEMENT[at0155] occurrences matches {0..1} matches {    -- Restart criterion
 						value matches {
 							DV_TEXT matches {*}
@@ -782,19 +777,19 @@ definition
 					}
 					ELEMENT[at0021] occurrences matches {0..*} matches {    -- Reason
 						value matches {
-							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {*}
 						}
 					}
 					CLUSTER[at0140] occurrences matches {0..1} matches {    -- Administration details
 						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0147] occurrences matches {0..1} matches {    -- Route
 								value matches {
-									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
 								}
 							}
 							ELEMENT[at0141] occurrences matches {0..1} matches {    -- Body site
 								value matches {
-									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
 								}
 							}
 							allow_archetype CLUSTER[at0142] occurrences matches {0..1} matches {    -- Structured body site
@@ -803,7 +798,7 @@ definition
 							}
 							ELEMENT[at0143] occurrences matches {0..*} matches {    -- Administration method
 								value matches {
-									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
 								}
 							}
 							allow_archetype CLUSTER[at0144] occurrences matches {0..*} matches {    -- Administration device
@@ -826,22 +821,12 @@ definition
 					}
 					ELEMENT[at0025] occurrences matches {0..1} matches {    -- Sequence number
 						value matches {
-							DV_COUNT matches {*}
+							DV_CODED_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0024] occurrences matches {0..1} matches {    -- Comment
 						value matches {
 							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0162] occurrences matches {0..1} matches {    -- pau_com
-						value matches {
-							DV_CODED_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0163] occurrences matches {0..1} matches {    -- pau_dmo
-						value matches {
-							DV_DATE_TIME matches {*}
 						}
 					}
 				}
@@ -856,21 +841,8 @@ definition
 						}
 					}
 					allow_archetype CLUSTER[at0085] occurrences matches {0..*} matches {    -- Extension
-					}
-					ELEMENT[at0164] occurrences matches {0..1} matches {    -- Original information date
-						value matches {
-							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0165] occurrences matches {0..1} matches {    -- Original information code
-						value matches {
-							DV_CODED_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0167] occurrences matches {0..1} matches {    -- Population group
-						value matches {
-							DV_CODED_TEXT matches {*}
-						}
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.protocol\.v0/}
 					}
 				}
 			}
@@ -1119,30 +1091,6 @@ Coding of the body site with a terminology is preferred, where possible.(en)">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
 				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
-				>
 			>
 		>
 		["sl"] = <
@@ -1384,30 +1332,6 @@ Coding of the body site with a terminology is preferred, where possible.(en)">
 					text = <"*Clinical indication (en)">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
-				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
 				>
 			>
 		>
@@ -1651,30 +1575,6 @@ Coding of the body site with a terminology is preferred, where possible.(en)">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
 				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
-				>
 			>
 		>
 		["ru"] = <
@@ -1916,30 +1816,6 @@ Coding of the body site with a terminology is preferred, where possible.(en)">
 					text = <"*Clinical indication (en)">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
-				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
 				>
 			>
 		>
@@ -2183,30 +2059,6 @@ Coding of the body site with a terminology is preferred, where possible.">
 					text = <"Clinical indication">
 					description = <"The clinical reason for the medication activity.">
 					comment = <"For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\"">
-				>
-				["at0157"] = <
-					text = <"Data administració/no vacunació">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"pau_com">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"pau_dmo">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"Original information date">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"Original information code">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"Population group">
-					description = <"">
 				>
 			>
 		>
@@ -2452,30 +2304,6 @@ Coding of the body site with a terminology is preferred, where possible.">
 Dersom bare denne arketypen blir brukt for å dokumentere legemiddeladministeringen, kan dette dataelementet brukes uten å tenke noe mer på det. Men dersom \"Klinisk indikasjon\" er registrert i både Legemiddelordinering (INSTRUCTION.medication_order) og denne Legemiddelhåndtering (ACTION.medication), må man være oppmerksom på at det kan være forskjell i registrert indikasjonen.
 ">
 				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
-				>
 			>
 		>
 		["pt-br"] = <
@@ -2717,30 +2545,6 @@ Dersom bare denne arketypen blir brukt for å dokumentere legemiddeladministerin
 					text = <"*Clinical indication (en)">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
-				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
 				>
 			>
 		>
@@ -2984,30 +2788,6 @@ Es wird dringend empfohlen, dass das Element \"Arzneimittel\" mit einer Terminol
 					description = <"Der klinische Grund für die Aktivität mit dem Arzneimittel.">
 					comment = <"Zum Beispiel: \"Angina\" oder \"Schmerz\". Die Codierung der Indikation mit einer Terminologie wird nach Möglichkeit bevorzugt. Dieses Datenelement ermöglicht mehrere Vorkommen. Wenn nur ein AKTION-Archetyp zur Aufzeichnung einer Medikamentenindikation verwendet wird, kann dieses Datenelement ohne zusätzliche Überlegungen verwendet werden. Wenn jedoch eine klinische Indikation sowohl im INSTRUCTION-Archetyp zur Verordnung von Arzneimittel als auch im AKTION-Archetyp zur Medikamentenanwendung aufgezeichnet wird, beachten Sie, dass diese Indikationen möglicherweise nicht konsistent sind.">
 				>
-				["at0157"] = <
-					text = <"*Data administració/no vacunació (en)">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"*pau_com (en)">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"*pau_dmo (en)">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"*Original information date (en)">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"*Original information code (en)">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"*Population group (en)">
-					description = <"">
-				>
 			>
 		>
 		["ca"] = <
@@ -3250,30 +3030,6 @@ Coding of the body site with a terminology is preferred, where possible. (en)">
 					text = <"Indicació clínica">
 					description = <"*The clinical reason for the medication activity. (en)">
 					comment = <"*For example: 'Angina' or 'Pain'. Coding of the indication with a terminology is preferred, where possible. This data element allows multiple occurrences. If only an ACTION is used to record a medication indication, this data element can be used without additional consideration. However, if a clinical indication is recorded for both the Medication order INSTRUCTION and this Medication management ACTION, be aware that these indications might not be consistent.\" (en)">
-				>
-				["at0157"] = <
-					text = <"Data administració/no vacunació">
-					description = <"">
-				>
-				["at0162"] = <
-					text = <"pau_com">
-					description = <"">
-				>
-				["at0163"] = <
-					text = <"pau_dmo">
-					description = <"">
-				>
-				["at0164"] = <
-					text = <"Data d'informació original">
-					description = <"">
-				>
-				["at0165"] = <
-					text = <"Codi d'informació original">
-					description = <"">
-				>
-				["at0167"] = <
-					text = <"Grup poblacional">
-					description = <"">
 				>
 			>
 		>
