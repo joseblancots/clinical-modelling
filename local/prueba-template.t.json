@@ -20,9 +20,9 @@
       "original_publisher" : "",
       "custodian_namespace" : "",
       "sem_ver" : "0.1.0",
-      "build_uid" : "",
-      "MD5-CAM-1.0.1" : "33008d03357b107f5b9e85fb66863763",
-      "PARENT:MD5-CAM-1.0.1" : "d9fc045a0a2a91c7014d818fb11af245"
+      "build_uid" : "cfff6296-fb89-421c-989e-3dfd2afaabc4",
+      "MD5-CAM-1.0.1" : "5300ba1e9131badb9da321d61ec2666c",
+      "PARENT:MD5-CAM-1.0.1" : "c0c65d363e8b0904b3931f72ffac0c32"
     },
     "details" : {
       "en" : {
@@ -103,7 +103,7 @@
   "rmName" : "openehr",
   "rmRelease" : "1.1.0",
   "generated" : true,
-  "templateId" : "prueba-template",
+  "templateId" : "prueba-plantilla",
   "otherMetaData" : { },
   "templateOverlays" : [ ],
   "originalLanguage" : {
